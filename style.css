@@ -1,6 +1,6 @@
 /* we are going to start with basic font styling. We will begin with the h1, h2, h3 &h4 */
 body{
-  background-image: url('../img/pizza.jpg');
+  background-image: url('pizza.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
