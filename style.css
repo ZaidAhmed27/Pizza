@@ -1,0 +1,91 @@
+/* we are going to start with basic font styling. We will begin with the h1, h2, h3 &h4 */
+body{
+  background-image: url('../img/pizza.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header{
+  /* first we will adjust the width of the header. We will use the % measurement for this instead of the px measurement. */
+width: 75%;
+}
+/* Now we need to navigate to the image, this is called navigating the dom. */
+header > div > a > img{
+padding: 30%;
+}
+section{
+  width: 75%;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 2%
+
+}
+section > h1{
+ text-align: center;
+ color: Black;
+ font-family: cursive;
+ font-size: 50px;
+ background-color: #FFA500;
+
+}
+section > h2{
+  text-align: center;
+  color: Black;
+  font-family: cursive;
+  font-size: 45px;
+  background-color: #FF6347;
+}
+section > {
+  text-align: left;
+  color: Black;
+  font-family: cursive;
+  font-size: 40px;
+  background-color: #808080;
+
+}
+section > h4{
+  text-align: left;
+  color: Black;
+  font-family: sans-serif;
+  font-size: 25px;
+  background-color: #808080;
+
+}
+section > h5{
+  text-align:left;
+  color: Black;
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color: #FFFF00;
+}
+section > h6{
+  text-align: left;
+  color: Black;
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color: #00FFFF;
+}
+section > h7{
+  text-align: center;
+  background: #0e0e0e;
+
+}
+section > h8{
+  text-align: center;
+  background-color: ##CBC3E3;
+}
+section > h9{
+  text-align: center;
+  color: Black;
+  font-family: monospace;
+  font-size: 30px;
+}
+
+footer{
+  width: 70%;
+  margin: auto;
+  padding: 2%;
+  text-align: center;
+  color: #ffffff;
+  background: #0e0e0e;
+}

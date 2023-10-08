@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Let's order a pizza</title>
+  <meta name="description" content= "this week we will be looking for HTML document of a song">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- next we will need to link our css file to our html file. We do this because it is bad practice to have our CSS in the same file as our HTML. Having them together will also give errors when validating the HTML. -->
+  <link rel="stylesheet" href="./css/style.css">
+  </head>
+<body>
+  <main>
+<header>
+  <!-- this will act as my logo container -->
+  <div>
+    <a href="index.php" target="_self">
+      <img src="./img/pizza3.png" alt="Zaid's Pizza">
+    </a>
+  </div>
+</header>
+    <section>
+      <h1>Zaid's Pizza</h1>
+      <h2>Let's Order a Pizza </h2>
+    </section>
+    <section>
+       <p
+      <!-- let's come back to our PHP tag after we construct our form. Note that we are only going to show some of the inputs. -->
+      <?php
+            //these are empty variables that will be populated by our form.
+            $name = "";
+            $tphone = "";
+            $email = "";
+            // these are empty variables that are there in case a field is left empty.
+            $nameErr = "";
+            $tphoneErr = "";
+            $emailErr = "";
+            // now for a basic if statement
+            if($_SERVER["REQUEST_METHOD"] == "post"){
+              //  name
+              if(empty($_POST[fname])){
+                $nameErr = "Name is required";
+              }else{
+              $fname = form_input($POST['name']);
+            }
+            // Telephone
+            if(empty($_POST[Telephone])){
+              $lnameErr = "Telephone is required";
+            }else{
+            $lname = form_input($POST['Telephone']);
+          }
+          // email
+          if(empty($_POST[email])){
+            $emailErr = "Email is required";
+          }else{
+          $lname = form_input($POST['email']);
+        }
+      }
+      function form_input($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return$data;
+      }
+        ?>
+       <!-- the $_SERVER["PHP_SELF"] is a super global variable that returns the filename of the currently executing script. The htmlspecialchars()function converts special characters to HTML entities. This means that it will replace HTML characters like < and > with &lt; and &gt;. this prevent attackers from exploiting the code by injecting HTML or javascript code (cross-site scripting attacks) in forms. -->
+       <form action="<?php echo htmlspecialchars($_server['PHP_SELF']);?>" method="post" autocomplete="on" enctype="multipart/form-data">
+         <!-- now that we have all those attributes out of the way...lets's add some inputs -->
+       <p>
+         <label> Customer Details</label>
+       </p>
+        <!-- for the first two inputs I will be using the placeholder attribute to communicate with the user -->
+        <label>Name:</label>
+        <input type="text" name="fname" placeholder="Name" required>
+        <label>Telephone:</label>
+        <input type="text" name="tphone" placeholder="Telephone" required>
+        <br>
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <label>Address :</label>
+        <input type="Address" name="Address" placeholder="Address" required>
+        <br>
+        </section>
+
+        <section>
+        <!-- our next example is a radio button, if these are made correctly you should only be able to select one of them -->
+
+       <div>
+        <p>
+        <br>
+        <br>
+          <label>Size:</label>
+        <br>
+        <input type="radio" id="Large" name="lang" value="Large">
+         <label for="Large">Large</label>
+        <input type="radio" id=Medium"" name="lang" value="Medium">
+         <label for="Medium">Medium</label>
+        <input type="radio" id="Small" name="lang" value="Small">
+         <label for="Small">Small</label>
+         <br>
+         </p>
+
+         </div>
+         </section>
+
+              <section>
+              <h4>
+              <br>
+              <label>Number Of Pizzas:</label>
+            <input type="text" name="No. Pizzas" placeholder="Number" required>
+              <br>
+            </h4>
+            </section>
+
+
+              <section>
+              <h5>
+              <legend>Topping</legend>
+              <input type="radio" id="Margharita" name="lang" value="Margharita">
+               <label for="Margharita">Margharita</label>
+               <br>
+               <input type="radio" id="Black Olives" name="lang" value="Black Olives">
+                <label for="Black Olives">Black Olives</label>
+                <br>
+                <input type="radio" id="Red Peppers" name="lang" value="Red Peppers">
+                <label for="Red Peppers">Red Peppers</label>
+                 <br>
+                 <input type="radio" id="Grilled Chicken" name="lang" value="Grilled Chicken">
+                 <label for="Grilled Chicken">Grilled Chicken</label>
+                 <br>
+                 <input type="radio" id="Italian Sausage" name="lang" value="Italian Sausage">
+                 <label for="Italian Sausage">Italian Sausage</label>
+                 <br>
+                 </h5>
+
+                 <h6>
+                 <legend>Extra's</legend>
+                 <input type="checkbox" id="Mushroom" name="lang" value="Mushroom">
+                  <label for="Mushroom">Mushroom</label>
+                  <br>
+                  <input type="checkbox" id="Extra cheese" name="lang" value="Extra cheese">
+                   <label for="Extra cheese">Extra cheese</label>
+                   <br>
+                   <input type="checkbox" id="Green Peppers" name="lang" value="Green Peppers">
+                   <label for="Green Peppers">Green Peppers</label>
+                    <br>
+                    </h6>
+                    </section>
+
+                    <section>
+                    <h7>
+                    <p>
+                      <input type="checkbox" id="SPICY" name="lang" value="SPICY"
+                    *SPICY*
+                    <a href="index.php" target="_self">
+                    <img src="./img/pizza-3.png" alt="spicy">
+                    </a>
+                    </p>
+
+
+                    <p>
+                      <input type="checkbox" id="REGULAR" name="lang" value="REGULAR"
+                    *REGULAR*
+                    <a href="index.php" target="_self">
+                    <img src="./img/pizza-4.png" alt="spicy">
+                    </a>
+                    </p>
+                    </h7>
+                    </section>
+
+
+
+                    <section>
+                    <h8>
+                    <br>
+                    <label>Delivery Time:</label>
+                    <input type="text" name="fname" placeholder="--:--" required>
+                    </br>
+                    <br>
+                    <label>Note By Customer:</label>
+                    <input type="text" name="fname" placeholder="" required>
+                  </br>
+                  </h8>
+
+                   <section>
+                     <h9>
+                     <br>
+          <input type="submit" name="submit" value="submit form">
+                   </br>
+                 </h9>
+                 </section>
+           </form>
+          </section>
+          </main>
+          <footer>
+            <br>
+            <h9>Thank You<h9/>
+              <br>
+          </footer>
+   </body>
+</html>
